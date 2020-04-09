@@ -20,14 +20,14 @@
 2. Vamos a _Your VPCs_ y creamos una VPC donde haremos todas las configuraciones necesarias para el correcto funcionamiento del cluster EMR. ![Img-2](./images/EMR/Img-2.png)
 3. En la sección _Internet Gateway_ creamos una Internet Gateway (IG) para nuestra VPC. ![Img-3](./images/EMR/Img-3.png)
 4. Para agregar la IG damos click en _Attach to VPC_. ![Img-4](./images/EMR/Img-4.png)
-5. Después vamos a Route Tables, seleccionamos la VPC la que corresponde a la VPC que creamos y le asignamos un nombre. ![Img-5](./images/EMR/Img-5.png)
-6. Damos click en el botton de abajo _Routes_ y aparecerá un boton que dice _Edit routes_ damos click en este y añadimos la siguiente configuración. ![Img-6](./images/EMR/Img-6.png)
+5. Después vamos a Route Tables, seleccionamos la que tiene en _VPC ID_ el código correspondiente a la creada en el paso uno y le asignamos un nombre. ![Img-5](./images/EMR/Img-5.png)
+6. Damos click en el botón de abajo _Routes_ y aparecerá un botón que dice _Edit routes_ damos click en este y añadimos la siguiente configuración. ![Img-6](./images/EMR/Img-6.png)
 7. Vamos a la parte de _Subnets_ y damos click en _Create subnet_. Nos encontraremos con la siguiente pantalla, seleccionamos la VPC creada y llenamos los campos necesarios. ![Img-7](./images/EMR/Img-7.png)
-8. Finalmente es hora de habilidad el _DNS Hostname_ y para ello vamos a _Your VPCs_, seleccionamos la VPC creada y en _Actions_ damos click en _Edit DNS hostnames_. ![Img-8](./images/EMR/Img-8.png)
+8. Finalmente es hora de habilitar el _DNS Hostname_ y para ello vamos a _Your VPCs_, seleccionamos la VPC creada y en _Actions_ damos click en _Edit DNS hostnames_. ![Img-8](./images/EMR/Img-8.png)
 Nos mostrará la siguiente vista, damos click en el cambo _enable_ y después en guardar. ![Img-9](./images/EMR/Img-9.png)
 
 ### Creación
 
-### Descrucción
+### Destrucción
 
 ### Clonación
