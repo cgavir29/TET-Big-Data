@@ -6,14 +6,17 @@
 
 1. Se ingresa por la terminal al DCA utilizando la VPN. ![HDFS-DCA-1](./images/HDFS-DCA/Img-1.png)
 2. Creación del directorio _datasets_ en el HDFS en la ruta `/user/cgavir29/`. ![HDFS-DCA-2](./images/HDFS-DCA/Img-2.png)
-3. Clonación del repositorio https://github.com/st0263eafit/bigdata que contiene los _datasets_ en `/home/cgavir29`. ![HDFS-DCA-3](./images/HDFS-DCA/Img-3.png)
+3. Clonación del repositorio [st0264eafit/bigdata](https://github.com/st0263eafit/bigdata) que contiene los _datasets_ en `/home/cgavir29`. ![HDFS-DCA-3](./images/HDFS-DCA/Img-3.png)
 4. Se toma la carpeta _datasets_ y se extraen los `.zip` que allí se encuentran. ![HDFS-DCA-4](./images/HDFS-DCA/Img-4.png)
 5. Se copia el directorio local `/home/cgavir29/datasets` al directorio HDFS `/user/cgavir29/datasets`. ![HDFS-DCA-5](./images/HDFS-DCA/Img-5.png)
 
-### Amazon S3
+### S3
 
-1. Vamos al servicio de AWS S3 y presionamos el botón _Create bucket_. ![S3-1](./images/S3/Img-1.png)
-2. Ponemos un nombre al bucket y damos en _Create bucket_. ![S3-2](./images/S3/Img-2.png)
+1. Vamos al servicio de S3 y presionamos el botón _Create bucket_. ![HDFS-S3-1](./images/HDFS-S3/Img-1.png)
+2. Ponemos un nombre al bucket, nos aseguramos que _Block all public access_ no esté activado y damos en _Create bucket_. ![HDFS-S3-2](./images/HDFS-S3/Img-2.png)
+3. Ahora creamos una carpeta que se llamará `datasets`. ![HDFS-S3-3](./images/HDFS-S3/Img-3.png) ![HDFS-S3-4](./images/HDFS-S3/Img-4.png)
+4. Finalmente damos acceso público al directorio creado ![HDFS-S3-5](./images/HDFS-S3/Img-5.png) ![HDFS-S3-6](./images/HDFS-S3/Img-6.png) y pasamos a cargar los datos.
+5. Primero clonamos el repositorio con los comandos que se ven en pantalla.![HDFS-S3-7](./images/HDFS-S3/Img-7.png) Después, en S3 entramos a la carpeta _datasets_ y damos click en _upload_.![HDFS-S3-8](./images/HDFS-S3/Img-8.png) Arrastramos los archivos que clonamos del repositorio y seguimos las configuraciones como se indica. ![HDFS-S3-9](./images/HDFS-S3/Img-9.png) ![HDFS-S3-10](./images/HDFS-S3/Img-10.png) ![HDFS-S3-11](./images/HDFS-S3/Img-11.png) ![HDFS-S3-12](./images/HDFS-S3/Img-12.png) ![HDFS-S3-13](./images/HDFS-S3/Img-13.png) ![HDFS-S3-14](./images/HDFS-S3/Img-14.png)
 
 ## EMR
 
@@ -24,9 +27,9 @@
 3. En la sección _Internet Gateway_ creamos una Internet Gateway (IG) para nuestra VPC. ![EMR-3](./images/EMR/Img-3.png)
 4. Para agregar la IG damos click en _Attach to VPC_. ![EMR-4](./images/EMR/Img-4.png)
 5. Después vamos a Route Tables, seleccionamos la que tiene en _VPC ID_ el código correspondiente a la creada en el paso uno y le asignamos un nombre. ![EMR-5](./images/EMR/Img-5.png)
-6. Damos click en el botón de abajo _Routes_ y aparecerá un botón que dice _Edit routes_ damos click en este y añadimos la siguiente configuración. ![EMR-6](./images/EMR/Img-6.png)
+6. Damos click en el botón de abajo _Routes_ y aparecerá un botón que dice _Edit routes_, damos click en éste y añadimos la siguiente configuración. ![EMR-6](./images/EMR/Img-6.png)
 7. Vamos a la parte de _Subnets_ y damos click en _Create subnet_. Nos encontraremos con la siguiente pantalla, seleccionamos la VPC creada y llenamos los campos necesarios. ![EMR-7](./images/EMR/Img-7.png)
-8. Finalmente es hora de habilitar el _DNS Hostname_ y para ello vamos a _Your VPCs_, seleccionamos la VPC creada y en _Actions_ damos click en _Edit DNS hostnames_. ![EMR-8](./images/EMR/Img-8.png) Nos mostrará la siguiente vista, damos click en el cambo _enable_ y después en guardar. ![EMR-9](./images/EMR/Img-9.png)
+8. Finalmente es hora de habilitar el _DNS Hostname_ y para ello vamos a _Your VPCs_, seleccionamos la VPC creada y en _Actions_ damos click en _Edit DNS hostnames_. ![EMR-8](./images/EMR/Img-8.png) Nos mostrará la siguiente vista, damos click en el campo _enable_ y después en guardar. ![EMR-9](./images/EMR/Img-9.png)
 
 ### Creación
 
@@ -47,5 +50,11 @@
 ### Clonación
 
 1. Para recrear un cluster igual al que se creó anterioemente seleccionamos nuestro cluster y vamos click en el botón _Clone_. ![EMR-21](./images/EMR/Img-21.png)
-2. Parecera el siguiente modal para preguntarnos si deseamos cambiar la configuración o siemplemente crear un nuevo cluster. ![EMR-22](./images/EMR/Img-22.png)
-3. También podemos recrear (clonar) un cluster con el cli de aws y para ello hacemos lo siguiente. Seleccionamos el cluster que queremos clonar y presionamos en _View details_. ![EMR-23](./images/EMR/Img-23.png) Una vez allí damos click en _AWS CLI export_. ![EMR-24](./images/EMR/Img-24.png) Finalmente copiamos el comando que aparece en pantalla. ![EMR-25](./images/EMR/Img-25.png)
+2. Aparecerá el siguiente pop-up para preguntarnos si deseamos cambiar la configuración o simplemente crear un nuevo cluster. ![EMR-22](./images/EMR/Img-22.png)
+3. También podemos recrear (clonar) un cluster con el CLI de AWS y para ello hacemos lo siguiente. Seleccionamos el cluster que queremos clonar y presionamos en _View details_. ![EMR-23](./images/EMR/Img-23.png) Una vez allí damos click en _AWS CLI export_. ![EMR-24](./images/EMR/Img-24.png) Finalmente copiamos el comando que aparece en pantalla. ![EMR-25](./images/EMR/Img-25.png)
+
+## WordCount y MapReduce - LOCAL
+
+## WordCount y MapReduce - EMR
+
+## Ejercicio Seleccionado
