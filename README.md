@@ -36,12 +36,12 @@
 1. Vamos al servicio EMR de Amazon. ![EMR-10](./images/EMR/Img-10.png) y damos click en el botón azul _Create cluster_ y nos encontraremos con la siguiente información.
 2. Después del paso anterior nos encontraremos con lo siguente. ![EMR-11](./images/EMR/Img-11.png) Para configurar adecuadamente nuestro cluster iremos a las opciones avanzadas presionando el link en donde se encuentra el puntero en la imagen anterior.
 3. Ahora seleccionamos lo servicios que queremos que tenga nuestro cluster como se ve en la siguiente imagen. ![EMR-12](./images/EMR/Img-12.png) y damos click en _Next_ en la esquina inferior derecha.
-4. En esta sección indicamos la VPC que vamos a utilizar para nuestro cluster, así como la subnet. ![EMR-13](./images/EMR/Img-13.png) igual que en el paso anterior presionamos _Next_ en la esquina inferior derecha.
+4. En esta sección indicamos la VPC que vamos a utilizar para nuestro cluster, así como la subnet y el tipo de instancias que utlizaremos para el _Master_ y el _Core_. ![EMR-13](./images/EMR/Img-13.png) igual que en el paso anterior presionamos _Next_ en la esquina inferior derecha.
 5. Indicamos el nombre el cluster EMR que vamos a crear. ![EMR-14](./images/EMR/Img-14.png) y presionamos el botón _Next_.
 6. En este paso seleccionamos la _EC2 key pair_ que usaremos para acceder a nustro cluster. ![EMR-15](./images/EMR/Img-15.png) y presionamos el botón _Create cluster_.
 7. Cuando veamos la siguiente información nuestro cluster (tet-emr) se habrá creado satisfactoriamente. ![EMR-16](./images/EMR/Img-16.png)
 8. Aún no hemos terminado, debemos consigurar los puertos en el grupo de seguridad para asegurar que se tiene acceso a los diferentes servicios del cluster. Para damos click en el nombre del cluster en la imagen anterior y vamos al link que está subrayado en la siguiente imagen. ![EMR-17](./images/EMR/Img-17.png)
-9. Seleccionamos el que corresponde al master. ![EMR-18](./images/EMR/Img-18.png) y asignamos los permisos correspondientes. ![EMR-19](./images/EMR/Img-19.png) ![EMR-20](./images/EMR/Img-20.png)
+9. Seleccionamos el que corresponde al master. ![EMR-18](./images/EMR/Img-18.png) y asignamos los permisos correspondientes. ![EMR-19](./images/EMR/Img-19.png)
 
 ### Destrucción
 
@@ -52,6 +52,18 @@
 1. Para recrear un cluster igual al que se creó anterioemente seleccionamos nuestro cluster y vamos click en el botón _Clone_. ![EMR-21](./images/EMR/Img-21.png)
 2. Aparecerá el siguiente pop-up para preguntarnos si deseamos cambiar la configuración o simplemente crear un nuevo cluster. ![EMR-22](./images/EMR/Img-22.png)
 3. También podemos recrear (clonar) un cluster con el CLI de AWS y para ello hacemos lo siguiente. Seleccionamos el cluster que queremos clonar y presionamos en _View details_. ![EMR-23](./images/EMR/Img-23.png) Una vez allí damos click en _AWS CLI export_. ![EMR-24](./images/EMR/Img-24.png) Finalmente copiamos el comando que aparece en pantalla. ![EMR-25](./images/EMR/Img-25.png)
+
+### Acceso SSH
+
+1. Vamos a los detalles de nuestro cluster, damos click en donde está el mouse y copiamos el comando que aparece subrayado. ![EMR-SSH-1](./images/EMR-SSH/Img-1.png)
+2. Pegamos el comando en la terminal y ya podemos acceder al cluster, cabe recordar que se debe tener la llave de acceso. También podemos ver que los comandos de HDFS funcionan sin ningún problema.![EMR-SSH-2](./images/EMR-SSH/Img-2.png)
+
+### Acceso HUE
+
+1. Vamos a los detalles del cluster y copiamos la dirección que parace subrayada. ![HUE-1](./images/HUE/Img-1.png)
+2. Ahora vamos a un buscador e ingresamos esa dirección poniendo al final `:8888` y veremos la siguiente vista. ![HUE-2](./images/HUE/Img-2.png) Si es la primera vez, debe crear una cuenta siguiendo las instrucciones que allí aparecerán.
+3. Una vez adentro podemos ver nuestros buckets de S3 siguiendo estos pasos: ![HUE-3](./images/HUE/Img-3.png) ![HUE-4](./images/HUE/Img-4.png) ![HUE-5](./images/HUE/Img-5.png) ![HUE-6](./images/HUE/Img-6.png)
+4. También podemos acceder desde HUE al HDFS, así: ![HUE-7](./images/HUE/Img-7.png) ![HUE-8](./images/HUE/Img-8.png)
 
 ## WordCount y MapReduce - LOCAL
 
