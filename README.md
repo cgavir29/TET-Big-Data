@@ -78,3 +78,5 @@ Ingresamos a la carpeta `02-mapreduce` dentro del repositorio [bigdata](https://
 ### 5.2. Datos HDFS
 
 ## 6. Ejercicio Seleccionado
+
+Se escogió el ejercicio 1, el código se encuentra en [empleados.py](./empleados.py)
