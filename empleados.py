@@ -1,33 +1,57 @@
 from mrjob.job import MRJob
 
 
-class SalarioPromedioSector(MRJob):
+def avg(values):
+    total = 0
+    count = 0
+
+    for value in values:
+        total += value
+        count += 1
+
+    return total / count
+
+
+class AverageSalaryBySector(MRJob):
     def mapper(self, _, line):
-        (idemp, sececon, salary, year) = line.split(',')
-        yield sececon, int(salary)
+        _, sector, salary, _ = line.split(',')
 
-    def reducer(self, key, values):
-        yield key, sum(values) 
+        yield sector, int(salary)
+        
+    def reducer(self, sector, salary):
+        avg_salary = avg(salary)
+
+        yield sector, avg_salary
 
 
-class SalarioPromedioEmpleado(MRJob):
+class AverageSalaryPerEmployee(MRJob):
     def mapper(self, _, line):
-        (idemp, sececon, salary, year) = line.split(',')
-        yield idemp, int(salary)
+        user, _, salary, _ = line.split(',')
 
-    def reducer(self, key, values):
-        yield key, sum(values)
+        yield user, int(salary)
 
-class SectorPorEmpleado(MRJob):
+    def reducer(self, user, salary):
+        avg_salary = avg(salary)
+
+        yield user, avg_salary
+
+
+class SectorsPerEmployee(MRJob):
     def mapper(self, _, line):
-        (idemp, sececon, salary, year) = line.split(',')
-        yield idemp, 1
+        user, sector, _, _ = line.split(',')
 
-    def reducer(self, key, values):
-        yield key, sum(values)
+        yield user, sector
+
+    def unique_sectors(self, sectors):
+        return len(set(sectors))
+
+    def reducer(self, user, sector):
+        total_sectors = self.unique_sectors(sector)
+
+        yield user, total_sectors
 
 
 if __name__ == '__main__':
-    SalarioPromedioSector.run()
-    SalarioPromedioEmpleado.run()
-    SectorPorEmpleado.run()
+    AverageSalaryBySector.run()
+    AverageSalaryPerEmployee.run()
+    SectorsPerEmployee.run()
