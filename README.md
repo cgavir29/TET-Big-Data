@@ -71,6 +71,10 @@ Ingresamos a la carpeta `02-mapreduce` dentro del repositorio [bigdata](https://
 
 ## 4. WordCount y MapReduce - HADOOP
 
+### 4.1. Datos Locales
+
+### 4.2. Datos HDFS
+
 ## 5. WordCount y MapReduce - EMR
 
 ### 5.1. Datos S3
