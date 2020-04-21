@@ -63,7 +63,7 @@
 1. Vamos a los detalles del cluster y copiamos la dirección que parace subrayada. ![HUE-1](./images/HUE/Img-1.png)
 2. Ahora vamos a un buscador e ingresamos esa dirección poniendo al final `:8888` y veremos la siguiente vista. ![HUE-2](./images/HUE/Img-2.png) Si es la primera vez, debe crear una cuenta siguiendo las instrucciones que allí aparecerán.
 3. Una vez adentro podemos ver nuestros buckets de S3 siguiendo estos pasos: ![HUE-3](./images/HUE/Img-3.png) ![HUE-4](./images/HUE/Img-4.png) ![HUE-5](./images/HUE/Img-5.png) ![HUE-6](./images/HUE/Img-6.png)
-4. También podemos acceder desde HUE al HDFS, así: ![HUE-7](./images/HUE/Img-7.png) ![HUE-8](./images/HUE/Img-8.png)
+4. También podemos acceder desde HUE al HDFS, así: ![HUE-7](./images/HUE/Img-7.png) ![HUE-8](./images/HUE/Img-8.png) y subir archivos de la siguiente forma. ![HUE-9](./images/HUE/Img-9.png) ![HUE-10](./images/HUE/Img-10.png) ![HUE-11](./images/HUE/Img-11.png)
 
 ## 3. WordCount y MapReduce - LOCAL
 
