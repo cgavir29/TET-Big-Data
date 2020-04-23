@@ -67,19 +67,16 @@
 
 ## 3. WordCount y MapReduce - LOCAL
 
-Ingresamos a la carpeta `02-mapreduce` dentro del repositorio [bigdata](https://github.com/st0263eafit/bigdata). Corremos el `wordcount-local.py` ![WC-MR-LOCAL-1](./images/WC-MR-LOCAL/Img-1.png) y después el `wordcount-mr.py` en modo local. ![WC-MR-LOCAL-2](./images/WC-MR-LOCAL/Img-2.png)
+1. Ingresamos a la carpeta `02-mapreduce` dentro del repositorio [bigdata](https://github.com/st0263eafit/bigdata).
+2. Corremos el `wordcount-local.py` ![WC-MR-LOCAL-1](./images/WC-MR-LOCAL/Img-1.png) y después el `wordcount-mr.py` en modo local. ![WC-MR-LOCAL-2](./images/WC-MR-LOCAL/Img-2.png)
 
 ## 4. WordCount y MapReduce - HADOOP
 
-### 4.1. Datos Locales
-
-### 4.2. Datos HDFS
+1. Ingresamos a [jupter116.dis.eafit.edu.co](https://jupyter116.dis.eafit.edu.co/hub/login) y nos logeamos.
+2. Una vez adentro iremos a la terminal para ingresar a la máquina. ![WC-MR-HADOOP-1](./images/WC-MR-HADOOP/Img-1.png) ![WC-MR-HADOOP-2](./images/WC-MR-HADOOP/Img-2.png)
+3. Corremos el `wordcount-mrjob.py` de forma local. ![WC-MR-HADOOP-3](./images/WC-MR-HADOOP/Img-3.png) ![WC-MR-HADOOP-4](./images/WC-MR-HADOOP/Img-4.png)
 
 ## 5. WordCount y MapReduce - EMR
-
-### 5.1. Datos S3
-
-### 5.2. Datos HDFS
 
 ## 6. Ejercicio Seleccionado
 
