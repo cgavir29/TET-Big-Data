@@ -15,4 +15,4 @@
 
 ## 4. Ejercicio Seleccionado
 
-Se escogió el ejercicio 1, el código se encuentra en [empleados.py](empleados.py)
+Se escogió el ejercicio 1 y se obtuvo el siguiente resultado ![EMPLOYEE-1](images/EMPLOYEE/Img-1.png) el código se encuentra en [empleados.py](empleados.py).

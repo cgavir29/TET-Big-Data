@@ -17,14 +17,14 @@ class AverageSalaryBySector(MRJob):
         _, sector, salary, _ = line.split(',')
 
         yield sector, int(salary)
-        
+
     def reducer(self, sector, salary):
         avg_salary = avg(salary)
 
         yield sector, avg_salary
 
 
-class AverageSalaryPerEmployee(MRJob):
+class AverageSalaryByEmployee(MRJob):
     def mapper(self, _, line):
         user, _, salary, _ = line.split(',')
 
@@ -52,6 +52,14 @@ class SectorsPerEmployee(MRJob):
 
 
 if __name__ == '__main__':
+    print('Average Salary By Sector')
     AverageSalaryBySector.run()
-    AverageSalaryPerEmployee.run()
+    print()
+
+    print('Average Salary By Employee')
+    AverageSalaryByEmployee.run()
+    print()
+
+    print('Sectors Per Employee')
     SectorsPerEmployee.run()
+    print()
