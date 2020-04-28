@@ -13,6 +13,10 @@
 
 ## 3. WordCount - EMR
 
+1. Ingresamos al cluster de EMR utilizando `ssh`. ![WC-MR-EMR-1](images/WC-MR-EMR/Img-1.png)
+2. Instalamos `git` usando `yum install git -y` y clonamos el respositorio [bigdata](https://github.com/st0263eafit/bigdata) como se ve en la imagen. ![WC-MR-EMR-2](images/WC-MR-EMR/Img-2.png)
+3. Instalamos `mrjob` con el comando `sudo pip-3.6 install mrjob` después seguimos los pasos como en la imagen para correr el `wordcount-mrjob.py`.![WC-MR-EMR-3](images/WC-MR-EMR/Img-3.png) Finalmente obtenemos el siguiente resultado. ![WC-MR-EMR-4](images/WC-MR-EMR/Img-4.png)
+
 ## 4. Ejercicio Seleccionado
 
 Se escogió el ejercicio 1 y se obtuvo el siguiente resultado ![EMPLOYEE-1](images/EMPLOYEE/Img-1.png) el código se encuentra en [empleados.py](empleados.py).
