@@ -1,4 +1,4 @@
-# Laboratorio 3 - Hive & Sqoop
+# Laboratorio Hive & Sqoop
 
 ## 1. Conexión Hive via Hue
 

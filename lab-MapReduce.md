@@ -1,4 +1,4 @@
-# Laboratorio 2 - MapReduce
+# Laboratorio MapReduce
 
 ## 1. WordCount - LOCAL
 

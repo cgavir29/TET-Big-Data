@@ -1,4 +1,4 @@
-# Laboratorio 1 - HDFS
+# Laboratorio HDFS
 
 ## 1. DCA
 
