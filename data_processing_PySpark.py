@@ -20,7 +20,7 @@ spark=SparkSession.builder.appName('data_processing').getOrCreate()
 # In[ ]:
 
 
-# Load csv Dataset 
+# Load csv Dataset
 df=spark.read.csv('s3://<bucket/dir>/sample_data.csv',inferSchema=True,header=True)
 
 
