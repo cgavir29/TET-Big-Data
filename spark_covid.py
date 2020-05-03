@@ -13,18 +13,17 @@ df = df.drop('Codigo DIVIPOLA', 'FIS')
 
 # Crear columna donde se almacena el calculo de dias transcurridos entre 'Fecha diagnostico'
 # y 'fecha reporte web'
+df = df.withColumn('dias_hasta_reporte', datediff(df['fecha reporte web'], df['Fecha diagnostico']))
+df.filter(df['dias_hasta_reporte'] > 0).show()
 
-# Filtrar aquellos con Edad < 50 y Sexo = M
+# Filtrar aquellos con 'Edad' < 50 y 'Sexo' = M
 df.filter(df['Edad'] < 50).filter(df['Sexo'] == 'M').show()
 
 # Agrupar por 'Estado' y contar
 df.groupBy('Estado').count().orderBy('count', ascending=False).show()
 
-new_data_frame = df.withColumn('dias_hasta_reporte', datediff(df['fecha reporte web'], df['Fecha diagnostico']))
+# Guardar los resultados en el bucket de S3
+write_uri = 's3://tet-bd/datasets/spark/resultados'
 
-new_data_frame.filter(new_data_frame['dias_hasta_reporte'] > 0).show()
-
-write_uri='s3://tet-bd/datasets/spark/resultados'
-
-new_data_frame.coalesce(1).write.format("csv").option("header","true").save(write_uri)
+df.coalesce(1).write.format('csv').option('header', 'true').save(write_uri)
  
